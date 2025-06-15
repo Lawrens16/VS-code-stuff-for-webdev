@@ -1,0 +1,23 @@
+.buttons{
+    background-color: #81b5fc;
+    color: white;
+    padding:  13px 20px;
+}
+
+#label1{
+    font-size: 100px;
+
+}
+.buttons:hover{
+    background-color: hsl(214, 76%, 59%);
+}
+
+body{
+    text-align:center;
+}
+
+
+#div1{
+   text-align:center;
+
+}
