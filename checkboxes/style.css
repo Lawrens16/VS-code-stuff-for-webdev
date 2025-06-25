@@ -1,0 +1,15 @@
+#maleSymb{
+    cursor: grabbing;
+    width: 42px;
+    height: 42px;
+}
+
+#femaleSymb{
+    cursor: grabbing;
+    width: 52px;
+    height: 48px;
+}
+
+body{
+    text-align: center;
+}
