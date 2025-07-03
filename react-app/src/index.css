@@ -1,16 +1,11 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+ 
 
   color-scheme: light dark;
-  color: rgba(43, 118, 161, 0.87);
-  background-color: #f8efef;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #f9efef;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
 }
 
 a {
@@ -22,48 +17,21 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
 .Card{
 
   border: 1px solid hsl(0, 1%, 14%);
   border-radius: 20px;
-  padding: 3px;
+  padding: 3px; 
   box-shadow: 5px 5px 5px hsl(0, 2%, 62%);
   margin: 20px;
   text-align: center;
   overflow: hidden;
   max-width: 150px;
+   transform: translateX(-100%);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   display: inline-block;  /*for more cards*/
 }
 
@@ -93,3 +61,78 @@ button:focus-visible {
 }
 
 
+.Hidden{
+    display:grid;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;
+}
+
+.sectionTitle{
+    font-size: 32px;
+}
+
+.Hidden {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+
+.Hidden.show .Card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cardContainer .Card:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.cardContainer .Card:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.cardContainer .Card:nth-child(3) {
+  transition-delay: 0.6s;
+}
+.cardContainer .Card:nth-child(4) {
+  transition-delay: 0.8s;
+}
+.cardContainer .Card:nth-child(5) {
+  transition-delay: 1s;
+}
+.cardContainer .Card:nth-child(6) {
+  transition-delay: 1.2s;
+}
+.cardContainer .Card:nth-child(7) {
+  transition-delay: 1.4s;
+}
+.cardContainer .Card:nth-child(8) {
+  transition-delay: 1.6s;
+}
+
+
+@media(prefers-reduced-motion) {
+  .hidden {
+    transition:none;
+  }
+}
+
+.Hidden.show {
+  opacity: 1;
+  filter:blur(0);
+  transform: translateX(0);
+}
+
+.sectionTitle {
+  
+}
+
+.clickmeBtn{
+  margin:auto;
+  display:block;
+  padding: 5px;
+  font-size: 27px;
+  cursor: grab;
+  color:black;
+  background-color: hsl(220, 43%, 60%);
+}
